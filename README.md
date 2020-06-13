@@ -26,7 +26,8 @@ The output will be in the `result` dir.
 Run the following command to deploy the compiled result as a layer in your AWS account.
 
 ```
-make deploy DEPLOYMENT_BUCKET=<YOUR BUCKET NAME>
+DEPLOYMENT_BUCKET=developer-uploaded-assets make build/output.yaml
+DEPLOYMENT_BUCKET=developer-uploaded-assets make deploy
 ```
 
 ### configuring the deployment
@@ -38,7 +39,7 @@ By default, this uses `ffmpeg-lambda-layer` as the stack name. Provide a `STACK_
 An example project is in the [example](example) directory. It sets up two buckets, and listens to file uploads on the first bucket to convert and generate thumbnails from uploaded video files. You can deploy it from the root Makefile using:
 
 ```
-make deploy-example DEPLOYMENT_BUCKET=<YOUR BUCKET NAME>
+DEPLOYMENT_BUCKET=<YOUR BUCKET NAME> make deploy-example 
 ```
 
 For more information on using FFmpeg and FFprobe, check out <https://ffmpeg.org/documentation.html>
