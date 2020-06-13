@@ -1,9 +1,10 @@
 STACK_NAME ?= ffmpeg-lambda-layer
 
-clean: 
-	rm -rf build
+### no cleaning if we're using our own ffmpeg
+#clean: 
+#	rm -rf build
 
-# using an older precompiled ffmpeg
+### using an a precompiled ffmpeg 3 
 #build/layer/bin/ffmpeg: 
 #	mkdir -p build/layer/bin
 #	rm -rf build/ffmpeg*
